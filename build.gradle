@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.1'
+        // 重点就是下面这一行(上面两行是为了定位这一行的添加位置)
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+
+    ext {
+        COMPILE_SDK_VERSION = 28
+        BUILD_TOOL_VERSION = '28.0.3'
+        SUPPORT_LIBRARY_VERSION = '28.0.0'
+
+        MIN_SDK_VERSION = 14
+        TARGET_SDK_VERSION = 28
+        VERSION_CODE = 14
+        VERSION_NAME = '1.4.1'
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

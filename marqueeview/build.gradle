@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+// JitPack Maven
+apply plugin: 'com.github.dcendents.android-maven'
+// Group
+group='com.github.Victor2018'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:' + SUPPORT_LIBRARY_VERSION
+}
+
