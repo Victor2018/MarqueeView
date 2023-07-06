@@ -25,25 +25,25 @@ import java.util.List;
  */
 public class MarqueeView<T> extends ViewFlipper {
 
-    private int interval = 3000;
-    private boolean hasSetAnimDuration = false;
-    private int animDuration = 1000;
-    private int textSize = 14;
-    private int textColor = 0xff000000;
-    private boolean singleLine = false;
+    public int interval = 3000;
+    public boolean hasSetAnimDuration = false;
+    public int animDuration = 1000;
+    public int textSize = 14;
+    public int textColor = 0xff000000;
+    public boolean singleLine = false;
 
-    private int gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
-    private static final int GRAVITY_LEFT = 0;
-    private static final int GRAVITY_CENTER = 1;
-    private static final int GRAVITY_RIGHT = 2;
+    public int gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+    public static final int GRAVITY_LEFT = 0;
+    public static final int GRAVITY_CENTER = 1;
+    public static final int GRAVITY_RIGHT = 2;
 
-    private int direction = DIRECTION_BOTTOM_TO_TOP;
-    private static final int DIRECTION_BOTTOM_TO_TOP = 0;
-    private static final int DIRECTION_TOP_TO_BOTTOM = 1;
-    private static final int DIRECTION_RIGHT_TO_LEFT = 2;
-    private static final int DIRECTION_LEFT_TO_RIGHT = 3;
+    public int direction = DIRECTION_BOTTOM_TO_TOP;
+    public static final int DIRECTION_BOTTOM_TO_TOP = 0;
+    public static final int DIRECTION_TOP_TO_BOTTOM = 1;
+    public static final int DIRECTION_RIGHT_TO_LEFT = 2;
+    public static final int DIRECTION_LEFT_TO_RIGHT = 3;
 
-    private Typeface typeface;
+    public Typeface typeface;
 
     @AnimRes
     private int inAnimResId = R.anim.anim_bottom_in;
