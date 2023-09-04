@@ -282,14 +282,15 @@ public class MarqueeView<T> extends ViewFlipper {
             if (typeface != null) {
                 textView.setTypeface(typeface);
             }
-            textView.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (onItemClickListener != null) {
+
+            if (onItemClickListener != null) {
+                textView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
                         onItemClickListener.onItemClick(getPosition(), (TextView) v);
                     }
-                }
-            });
+                });
+            }
         }
         CharSequence message = "";
         if (marqueeItem instanceof CharSequence) {
