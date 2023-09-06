@@ -30,6 +30,7 @@ public class MarqueeView<T> extends ViewFlipper {
     public int animDuration = 1000;
     public int textSize = 14;
     public int textColor = 0xff000000;
+    public boolean mvTextBold = false;
     public boolean singleLine = false;
 
     public int gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
@@ -70,6 +71,7 @@ public class MarqueeView<T> extends ViewFlipper {
         interval = typedArray.getInteger(R.styleable.MarqueeViewStyle_mvInterval, interval);
         hasSetAnimDuration = typedArray.hasValue(R.styleable.MarqueeViewStyle_mvAnimDuration);
         animDuration = typedArray.getInteger(R.styleable.MarqueeViewStyle_mvAnimDuration, animDuration);
+        mvTextBold = typedArray.getBoolean(R.styleable.MarqueeViewStyle_mvTextBold, false);
         singleLine = typedArray.getBoolean(R.styleable.MarqueeViewStyle_mvSingleLine, false);
         if (typedArray.hasValue(R.styleable.MarqueeViewStyle_mvTextSize)) {
             textSize = (int) typedArray.getDimension(R.styleable.MarqueeViewStyle_mvTextSize, textSize);
@@ -273,6 +275,7 @@ public class MarqueeView<T> extends ViewFlipper {
             textView.setGravity(gravity | Gravity.CENTER_VERTICAL);
             textView.setTextColor(textColor);
             textView.setTextSize(textSize);
+            textView.getPaint().setFakeBoldText(mvTextBold);
             textView.setIncludeFontPadding(true);
             textView.setSingleLine(singleLine);
             if (singleLine) {
